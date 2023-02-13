@@ -4,7 +4,7 @@ resource "azurerm_spring_cloud_app" "this" {
   service_name        = var.service_name
 
   dynamic "identity" {
-    for_each = identity == null ? [] : [1]
+    for_each = var.identity == null ? [] : [1]
     content {
       type = var.identity
     }
